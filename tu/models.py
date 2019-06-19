@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import date
 
 # Create your models here.
 class TODO(models.Model):
@@ -8,3 +9,9 @@ class TODO(models.Model):
         return self.thing
     class Meta():
         db_table = 'tu'
+
+class Student(models.Model):
+    number=models.IntegerField()
+    name=models.CharField(max_length=10,null=False)
+    apartment = models.TextField()
+    birthday = models.DateField(default=date.today)
